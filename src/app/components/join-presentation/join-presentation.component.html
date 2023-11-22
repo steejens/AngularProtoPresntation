@@ -1,0 +1,19 @@
+<div *ngIf="!options.isJoined" style="margin-bottom: 20px; padding: 30px;">
+    <p>Connection ID: {{ connectionId }}</p>
+      <div>
+        <label for="presentationId">presentationId</label>
+        <input id="presentationId" [(ngModel)]="connectionId" type="text" #presentationId>
+      </div>
+      <div>
+        <label for="name">name</label>
+        <input id="name" type="text" #name>
+      </div>
+    <button (click)="join(presentationId.value, name.value)">Join Presentaiton</button>
+    <button (click)="leave(presentationId.value)">Leave Presentaiton</button>
+    <br> <br>
+    <button (click)="joinAsPresentator(presentationId.value, name.value)">Join as Presentor</button>
+  </div>
+  <!-- <div *ngFor="let message of messages">
+    {{ message }}
+  </div> -->
+  <app-presentation *ngIf="options.isJoined" [options]="options" [cursorObject]="cursorObject" [prId]="connectionId" [inputPage]="currentPage"></app-presentation>

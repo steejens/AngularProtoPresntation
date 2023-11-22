@@ -1,0 +1,10 @@
+.container{
+    position: relative;
+}
+.custom-cursor{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+}

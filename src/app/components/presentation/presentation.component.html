@@ -1,0 +1,9 @@
+<div class="container" (mousemove)="mouseTracking($event)">
+    <ngx-extended-pdf-viewer [(page)]="currentPage" 
+        
+        (pageChange)="changePage($event)"
+        [showToolbar]="false" [sidebarVisible]="false"
+        [src]="'/assets/pdfs/Bootstrap-vs-Material-Design-vs-Prime-vs-Tailwind.pdf'">
+    </ngx-extended-pdf-viewer>
+    <div *ngIf="options['isJoined'] && !options['isJoinedAsPresenter']" [ngStyle]="cursorObject"  class="custom-cursor"></div>
+</div>
